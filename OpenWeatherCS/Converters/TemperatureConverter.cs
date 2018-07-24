@@ -10,12 +10,13 @@ namespace OpenWeatherCS.Converters
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             var icon = (string) values[0];
-            var dayTemperature = (double) values[1];
-            var nightTemperature = (double) values[2];
+            /*var dayTemperature = (double) values[1];
+            var nightTemperature = (double) values[2];*/
+            //var Temperature = (double) values[1];
 
             if (icon == null) return Binding.DoNothing;
 
-            return (icon.ElementAt(2) == 'd') ? dayTemperature : nightTemperature;            
+            return 25.555;            
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)

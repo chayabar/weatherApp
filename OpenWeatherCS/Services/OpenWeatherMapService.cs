@@ -14,7 +14,7 @@ namespace OpenWeatherCS.Services
 {
     public class OpenWeatherMapService : IWeatherService
     {
-        private const string APP_ID = "PLACE-YOUR-APP-ID-HERE";
+        private const string APP_ID = "b6690a95607edce36670e8056ede35b3";
         private const int MAX_FORECAST_DAYS = 5;
         private HttpClient client;
 
@@ -31,7 +31,7 @@ namespace OpenWeatherCS.Services
             if (days <= 0) throw new ArgumentOutOfRangeException("Days should be greater than zero.");
             if (days > MAX_FORECAST_DAYS) throw new ArgumentOutOfRangeException($"Days can't be greater than {MAX_FORECAST_DAYS}");
 
-            var query = $"forecast/daily?q={location}&type=accurate&mode=xml&units=metric&cnt={days}&appid={APP_ID}";
+            var query = $"forecast?q={location}&type=accurate&mode=xml&units=metric&cnt={days}&APPID={APP_ID}";
             var response = await client.GetAsync(query);            
 
             switch (response.StatusCode)
@@ -42,19 +42,19 @@ namespace OpenWeatherCS.Services
                     throw new LocationNotFoundException("Location not found.");
                 case HttpStatusCode.OK:
                     var s = await response.Content.ReadAsStringAsync();
-                    var x = XElement.Load(new StringReader(s));                  
+                    var x = XElement.Load(new StringReader(s));
+
 
                     var data = x.Descendants("time").Select(w => new WeatherForecast
                     {
                         Description = w.Element("symbol").Attribute("name").Value,
                         ID = int.Parse(w.Element("symbol").Attribute("number").Value),
                         IconID = w.Element("symbol").Attribute("var").Value,
-                        Date = DateTime.Parse(w.Attribute("day").Value),
+                        Date = (DateTime.Parse(w.Attribute("from").Value)).Date,
                         WindType = w.Element("windSpeed").Attribute("name").Value,
                         WindSpeed = double.Parse(w.Element("windSpeed").Attribute("mps").Value),
                         WindDirection = w.Element("windDirection").Attribute("code").Value,
-                        DayTemperature = double.Parse(w.Element("temperature").Attribute("day").Value),
-                        NightTemperature = double.Parse(w.Element("temperature").Attribute("night").Value),
+                        Temperature = double.Parse(w.Element("temperature").Attribute("value").Value),
                         MaxTemperature = double.Parse(w.Element("temperature").Attribute("max").Value),
                         MinTemperature = double.Parse(w.Element("temperature").Attribute("min").Value),
                         Pressure = double.Parse(w.Element("pressure").Attribute("value").Value),

@@ -5,7 +5,7 @@ Imports System.Net
 Public Class OpenWeatherMapService
     Implements IWeatherService
 
-    Private Const APP_ID As String = "b6690a95607edce36670e8056ede35b3"
+    Private Const APP_ID As String = "63bcd7b1cee18bb7e4835de2fd17d52a"
     Private Const MAX_FORECAST_DAYS As Integer = 5
     Private client As HttpClient
 
