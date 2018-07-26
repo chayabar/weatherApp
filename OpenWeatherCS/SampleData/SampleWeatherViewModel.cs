@@ -41,7 +41,7 @@ namespace OpenWeatherCS.SampleData
             {
                 Date = new DateTime(2017, 8, 4),
                 ID = 800,
-                MaxTemperature = 34.65,
+                MaxTemperature = 34.66,
                 MinTemperature = 20.32,
                 IconID = "10d",
                 DayTemperature = 23,
