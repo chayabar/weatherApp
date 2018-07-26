@@ -7,31 +7,46 @@ namespace OpenWeatherCS.SampleData
     public class SampleWeatherViewModel
     {
 
-        public List<WeatherForecast> Forecast { get; set; }
-        public WeatherForecast CurrentWeather { get; set; }
+        public List<DailyForeCast> Forecast { get; set; }
+        public DailyForeCast CurrentWeather { get; set; }
 
         public SampleWeatherViewModel()
         {
-            CurrentWeather = new WeatherForecast()
+            CurrentWeather = new DailyForeCast()
             {
-                Date = DateTime.Now, Humidity = 82,  ID = 202, MaxTemperature = 34.12,
-                MinTemperature = 20.45, Pressure = 843.16, IconID = "11d", Temperature = 23.55,
+                Date = DateTime.Now,
+                ID = 202,
+                MaxTemperature = 34.12,
+                MinTemperature = 20.45,
+                IconID = "11d",
+                DayTemperature = 23.55,
+                NightTemperature = 18.35,
                 Description = "thunderstorm with heavy rain ",
-                WindDirection = "NE", WindSpeed = 1.85, WindType = "Light breeze"
+                WindSpeed = 1.85,
             };
 
-            Forecast = new List<WeatherForecast>();
-            Forecast.Add(new WeatherForecast()
+            Forecast = new List<DailyForeCast>();
+            Forecast.Add(new DailyForeCast()
             {
-                Date = new DateTime(2017, 8, 3), Humidity = 82, ID = 310, MaxTemperature = 18.33, MinTemperature = 12.78,
-                Pressure = 843.16, IconID = "09d", Temperature = 23, Description = "light intensity drizzle rain",
-                WindDirection = "NE", WindSpeed = 1.85, WindType = "Light breeze"
+                Date = new DateTime(2017, 8, 3),
+                ID = 310,
+                MaxTemperature = 18.33,
+                MinTemperature = 12.78,
+                IconID = "09d",
+                DayTemperature = 23,
+                Description = "light intensity drizzle rain",
+                WindSpeed = 1.85,
             });
-            Forecast.Add(new WeatherForecast()
+            Forecast.Add(new DailyForeCast()
             {
-                Date = new DateTime(2017, 8, 4), Humidity = 82, ID = 800, MaxTemperature = 34.65, MinTemperature = 20.32,
-                Pressure = 843.16, IconID = "10d", Temperature = 23, Description = "clear day",
-                WindDirection = "NE", WindSpeed = 1.85, WindType = "Light breeze"
+                Date = new DateTime(2017, 8, 4),
+                ID = 800,
+                MaxTemperature = 34.65,
+                MinTemperature = 20.32,
+                IconID = "10d",
+                DayTemperature = 23,
+                Description = "clear day",
+                WindSpeed = 1.85,
             });
         }
     }

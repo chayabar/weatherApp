@@ -64,16 +64,15 @@
                         </DoubleAnimationUsingKeyFrames>
                     </Storyboard>
                 </DataTemplate.Resources>
-                <Border x:Name="RootBorder" Height="200" Width="140" Margin="0,0,-1,0" SnapsToDevicePixels="True" 
+                <Border x:Name="RootBorder" Height="50" Width="305" Margin="0,0,-1,0" SnapsToDevicePixels="True" 
                         Background="{StaticResource PrimaryDarkBrush}" RenderTransformOrigin="0.5,0.5">
                     <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <Border BorderThickness="1,1,1,0"
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border BorderThickness="1"
                                 BorderBrush="{StaticResource PrimaryDarkBrush}" 
                                 Background="{StaticResource PrimaryMidBrush}">
                             <!-- Day of the week -->
@@ -82,10 +81,10 @@
                                        Text="{Binding Date, StringFormat={}{0:dddd}}"/>
                         </Border>
                         <!-- Weather icon -->
-                        <Border Grid.Row="1" BorderThickness="0,1,1,0"
+                        <Border Grid.Column="1" BorderThickness="1"
                                 BorderBrush="{StaticResource PrimaryDarkBrush}"                                  
-                                Background="{StaticResource PrimaryDarkBrush}">
-                            <Image MaxWidth="100" Margin="5,0,5,5">
+                                Background="{StaticResource PrimaryMidBrush}">
+                            <Image MaxWidth="80" Margin="5">
                                 <Image.Source>
                                     <MultiBinding Converter="{StaticResource WeatherIconConverter}" Mode="OneWay">
                                         <Binding Path="ID"/>
@@ -95,41 +94,15 @@
                             </Image>
                         </Border>
                         <!-- Min and max temperatures -->
-                        <Border Grid.Row="2" BorderThickness="1"
+                        <Border Grid.Column="2" BorderThickness="1"
                                 BorderBrush="{StaticResource PrimaryDarkBrush}"
-                                Background="{StaticResource PrimaryLightBrush}">
-                            <TextBlock Grid.Row="0" Style="{StaticResource WeatherTextStyle}" 
-                                       Margin="5" Foreground="#FFAEBFAE">
+                                Background="{StaticResource PrimaryMidBrush}">
+                            <TextBlock Style="{StaticResource WeatherTextStyle}" 
+                                       Margin="5" Foreground="#FFADB982">
                                 <Run Text="{Binding MaxTemperature, StringFormat={}{0:F0}°}"/>
                                 <Run Text="/" Foreground="Gray"/>
                                 <Run Text="{Binding MinTemperature, StringFormat={}{0:F0}°}"/>
                             </TextBlock>
-                        </Border>
-                        <Border Grid.Row="3" BorderThickness="1,0,1,1" 
-                                BorderBrush="{StaticResource PrimaryDarkBrush}"
-                                Background="{StaticResource PrimaryMidBrush}">
-                            <!-- Wind speed -->
-                            <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
-                                <Viewbox Margin="0,5,5,5">
-                                    <Canvas Width="24" Height="24">
-                                        <Path Data="M4,10A1,1 0 0,1 3,9A1,1 0 0,1 4,8H12A2,2 0 0,0 14,6A2,
-                                              2 0 0,0 12,4C11.45,4 10.95,4.22 10.59,4.59C10.2,5 9.56,5 9.17,
-                                              4.59C8.78,4.2 8.78,3.56 9.17,3.17C9.9,2.45 10.9,2 12,2A4,4 0 0,
-                                              1 16,6A4,4 0 0,1 12,10H4M19,12A1,1 0 0,0 20,11A1,1 0 0,0 19,
-                                              10C18.72,10 18.47,10.11 18.29,10.29C17.9,10.68 17.27,10.68 16.88,
-                                              10.29C16.5,9.9 16.5,9.27 16.88,8.88C17.42,8.34 18.17,8 19,8A3,
-                                              3 0 0,1 22,11A3,3 0 0,1 19,14H5A1,1 0 0,1 4,13A1,1 0 0,1 5,12H19M18,
-                                              18H4A1,1 0 0,1 3,17A1,1 0 0,1 4,16H18A3,3 0 0,1 21,19A3,3 0 0,1 18,
-                                              22C17.17,22 16.42,21.66 15.88,21.12C15.5,20.73 15.5,20.1 15.88,
-                                              19.71C16.27,19.32 16.9,19.32 17.29,19.71C17.47,19.89 17.72,20 18,
-                                              20A1,1 0 0,0 19,19A1,1 0 0,0 18,18Z" 
-                                              Fill="#FF9B8C5E" />
-                                    </Canvas>
-                                </Viewbox>
-                                <!-- Speed -->
-                                <TextBlock Grid.Column="1" Style="{StaticResource WeatherTextStyle}" Foreground="#FFAEBFAE"
-                                           Text="{Binding WindSpeed, StringFormat={}{0:F0} mps}"/>
-                            </StackPanel>
                         </Border>
                     </Grid>
                 </Border>

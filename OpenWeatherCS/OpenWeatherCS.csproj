@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="Converters\TemperatureConverter.cs" />
     <Compile Include="Converters\WeatherIconConverter.cs" />
+    <Compile Include="Models\DailyForeCast.cs" />
     <Compile Include="Models\WeatherForecast.cs" />
     <Compile Include="SampleData\SampleWeatherViewModel.cs" />
     <Compile Include="Services\DialogService.cs" />

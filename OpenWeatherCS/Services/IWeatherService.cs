@@ -6,6 +6,6 @@ namespace OpenWeatherCS.Services
 {
     public interface IWeatherService
     {
-        Task<IEnumerable<WeatherForecast>> GetForecastAsync(string location, int days);
+        Task<IEnumerable<DailyForeCast>> GetForecastAsync(string location, int days);
     }
 }

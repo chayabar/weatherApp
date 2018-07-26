@@ -22,8 +22,8 @@ namespace OpenWeatherCS.ViewModels
             dialogService = ds;
         }
 
-        private List<WeatherForecast> _forecast;
-        public List<WeatherForecast> Forecast
+        private List<DailyForeCast> _forecast;
+        public List<DailyForeCast> Forecast
         {
             get { return _forecast; }
             set
@@ -33,8 +33,8 @@ namespace OpenWeatherCS.ViewModels
             }
         }
 
-        private WeatherForecast _currentWeather = new WeatherForecast();
-        public WeatherForecast CurrentWeather
+        private DailyForeCast _currentWeather = new DailyForeCast();
+        public DailyForeCast CurrentWeather
         {
             get { return _currentWeather; }
             set
@@ -70,9 +70,9 @@ namespace OpenWeatherCS.ViewModels
         {
             try
             {
-                var weather = await weatherService.GetForecastAsync(Location, 3);
+                var weather = await weatherService.GetForecastAsync(Location, 40);
                 CurrentWeather = weather.First();
-                Forecast = weather.Skip(1).Take(2).ToList();
+                Forecast = weather.Skip(1).ToList();
             }
             catch (HttpRequestException ex) {
                 dialogService.ShowNotification("Ensure you're connected to the internet!", "Open Weather");
