@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:OpenWeatherCS"
              xmlns:utils="clr-namespace:OpenWeatherCS.Utils"
              xmlns:cnv="clr-namespace:OpenWeatherCS.Converters"
-             StartupUri="MainWindow.xaml">
+             StartupUri="WeaterMap.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -32,6 +32,14 @@
                 <Setter Property="HorizontalAlignment" Value="Center"/>
                 <Setter Property="VerticalAlignment" Value="Center"/>
             </Style>
+
+
+            <Style x:Key="ButtonMapStyle" TargetType="Button">
+                <Setter Property="Foreground" Value="{x:Null}"/>
+                <Setter Property="Background" Value="{x:Null}"/>
+                <Setter Property="BorderBrush" Value="{x:Null}"/>
+            </Style>
+
 
             <DataTemplate x:Key="IconTemplate">
                 <Viewbox Width="20" Height="20">
