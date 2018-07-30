@@ -98,8 +98,8 @@
     <Compile Include="Utils\ViewModelBase.cs" />
     <Compile Include="Utils\ViewModelLocator.cs" />
     <Compile Include="ViewModels\WeatherViewModel.cs" />
-    <Compile Include="WeaterMap.xaml.cs">
-      <DependentUpon>WeaterMap.xaml</DependentUpon>
+    <Compile Include="WeatherMap.xaml.cs">
+      <DependentUpon>WeatherMap.xaml</DependentUpon>
     </Compile>
     <Page Include="Controls\CurrentWeatherControl.xaml">
       <SubType>Designer</SubType>
@@ -119,7 +119,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="WeaterMap.xaml">
+    <Page Include="WeatherMap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

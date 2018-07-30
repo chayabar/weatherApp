@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:OpenWeatherCS"
              xmlns:utils="clr-namespace:OpenWeatherCS.Utils"
              xmlns:cnv="clr-namespace:OpenWeatherCS.Converters"
-             StartupUri="WeaterMap.xaml">
+             StartupUri="WeatherMap.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -38,6 +38,7 @@
                 <Setter Property="Foreground" Value="{x:Null}"/>
                 <Setter Property="Background" Value="{x:Null}"/>
                 <Setter Property="BorderBrush" Value="{x:Null}"/>
+                
             </Style>
 
 
