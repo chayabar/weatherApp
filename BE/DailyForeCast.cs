@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OpenWeatherCS.Models
+namespace BE
 {
     public class DailyForeCast
     {

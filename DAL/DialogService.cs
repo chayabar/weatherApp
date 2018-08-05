@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace OpenWeatherCS.Services
+namespace DAL
 {
     public class DialogService : IDialogService
     {

@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Input;
 
-namespace OpenWeatherCS.Commands
+namespace DAL
 {
     public class RelayCommand : ICommand
     {

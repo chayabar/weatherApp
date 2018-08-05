@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
-using OpenWeatherCS.Models;
+using DAL;
 using System.Threading.Tasks;
+using BE;
 
-namespace OpenWeatherCS.Services
+namespace DAL
 {
     public interface IWeatherService
     {

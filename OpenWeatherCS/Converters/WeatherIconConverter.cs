@@ -14,7 +14,7 @@ namespace OpenWeatherCS.Converters
 
             if (iconID == null) return Binding.DoNothing;
 
-            var timePeriod = iconID.ToCharArray()[2]; // This is either d or n (day or night)
+            var timePeriod = 'd';//iconID.ToCharArray()[2]; // This is either d or n (day or night)
             var pack = "pack://application:,,,/OpenWeather;component/WeatherIcons/";
             var img = string.Empty;
 

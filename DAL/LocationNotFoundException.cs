@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OpenWeatherCS.Utils
+namespace DAL
 {
     public class LocationNotFoundException : Exception
     {

@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using OpenWeatherCS.Models;
 using System.Net.Http;
 using System.IO;
 using System.Xml.Linq;
-using OpenWeatherCS.Utils;
 using System.Net;
 using System.Diagnostics;
+using BE;
 
-namespace OpenWeatherCS.Services
+namespace DAL
 {
     public class OpenWeatherMapService : IWeatherService
     {

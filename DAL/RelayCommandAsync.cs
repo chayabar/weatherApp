@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace OpenWeatherCS.Commands
+namespace DAL
 {
     public class RelayCommandAsync : ICommand
     {

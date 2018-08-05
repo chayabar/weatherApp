@@ -1,4 +1,4 @@
-﻿namespace OpenWeatherCS.Services
+﻿namespace DAL
 {
     public interface IDialogService
     {

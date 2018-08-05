@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace OpenWeatherCS.Models
+namespace BE
 {
     public class WeatherForecast
     {

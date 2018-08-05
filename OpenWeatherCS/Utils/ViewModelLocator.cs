@@ -1,5 +1,5 @@
-﻿using Microsoft.Practices.Unity;
-using OpenWeatherCS.Services;
+﻿using DAL;
+using Microsoft.Practices.Unity;
 using OpenWeatherCS.ViewModels;
 
 namespace OpenWeatherCS.Utils

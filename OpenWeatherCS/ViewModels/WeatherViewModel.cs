@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using OpenWeatherCS.Utils;
-using OpenWeatherCS.Commands;
-using OpenWeatherCS.Services;
-using OpenWeatherCS.Models;
+using DAL;
 using System.Net.Http;
+using BE;
+using OpenWeatherCS.Utils;
 
 namespace OpenWeatherCS.ViewModels
 {
